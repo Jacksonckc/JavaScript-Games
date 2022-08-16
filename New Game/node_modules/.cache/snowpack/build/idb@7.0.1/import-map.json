@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "idb": "./idb.js"
+  }
+}
