@@ -19,6 +19,7 @@ const auth = getAuth(firebaseApp)
 console.log(auth)
 
 onAuthStateChanged(auth, (user) => {
+  // console.log(user)
   if (user != null) {
     console.log('Logged in!')
   } else {
