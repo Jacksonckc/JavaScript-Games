@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: antiquewhite;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  padding: 30px;
+}
+
+h2 {
+  padding: 20px;
+}
+
+button {
+  padding: 30px;
+  font-size: larger;
+}
