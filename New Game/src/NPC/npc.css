@@ -1,6 +1,8 @@
-#canvas1 {
+#canvas1,
+#canvas2,
+#canvas3,
+#canvas4 {
   border: 3px solid black;
-  position: absolute;
-  height: 1000px;
-  width: 500px;
+  height: 750px;
+  width: 375px;
 }/*# sourceMappingURL=npc.css.map */
