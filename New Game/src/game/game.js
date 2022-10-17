@@ -195,7 +195,7 @@ const drawGameFaster = () => {
 
 window.addEventListener('click', (e) => {
   const detectPixelColor = collisionCtx.getImageData(e.x, e.y, 1, 1);
-  console.log(detectPixelColor);
+
   const pc = detectPixelColor.data;
   ravens.forEach((object) => {
     if (
@@ -224,10 +224,11 @@ const animate = (timestamp) => {
   let deltaTime = timestamp - lastTime;
   lastTime = timestamp;
   timeToNextRaven += deltaTime;
+  timestamp == 0 && ravens.push(new Raven());
   if (timeToNextRaven > ravenInterval) {
     if (ravenInterval > 600) {
       ravenInterval -= 200;
-      //   drawGameFaster();
+      // drawGameFaster();
     }
     ravens.push(new Raven());
     timeToNextRaven = 0;
@@ -246,7 +247,20 @@ const animate = (timestamp) => {
   explosions = explosions.filter((object) => !object.markedForDeletion);
   particles = particles.filter((object) => !object.markedForDeletion);
 
-  //   gameOver ? drawGameOver() : requestAnimationFrame(animate);
-  requestAnimationFrame(animate);
+  gameOver ? drawGameOver() : requestAnimationFrame(animate);
+  // requestAnimationFrame(animate);
 };
 animate(0);
+
+const cursorPointed = document.querySelector('.pointed');
+
+const moveCursor = (e) => {
+  const mouseY = e.clientY;
+  const mouseX = e.clientX;
+
+  cursorPointed.style.transform = `translate3d(${mouseX - 15}px, ${
+    mouseY - 10
+  }px, 0)`;
+};
+
+window.addEventListener('mousemove', moveCursor);
