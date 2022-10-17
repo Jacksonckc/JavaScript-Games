@@ -1,11 +1,19 @@
 body {
   background: linear-gradient(to bottom, red, green, blue);
+  //   background-image: url(./cute.jpeg);
+  background-position: center;
+  background-size: contain;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 #canvas1 {
-  //   background: blue;
+}
+#collisionCanvas {
+  opacity: 0;
+}
+
+canvas {
   position: absolute;
   top: 0;
   left: 0;
