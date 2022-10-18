@@ -17,6 +17,8 @@ let score = 0;
 let gameOver = false;
 ctx.font = '50px Impact';
 
+localStorage.setItem('score', 0);
+
 let explosions = [];
 class Explosion {
   constructor(x, y, size) {
@@ -163,6 +165,12 @@ const drawScore = () => {
   ctx.fillText('Score: ' + score, 50, 75);
   ctx.fillStyle = 'white';
   ctx.fillText('Score: ' + score, 55, 80);
+  // save the scores here
+};
+
+const runGameOverActions = () => {
+  drawGameOver();
+  localStorage.setItem('score', score);
 };
 
 const drawGameOver = () => {
@@ -246,11 +254,12 @@ const animate = (timestamp) => {
   ravens = ravens.filter((object) => !object.markedForDeletion);
   explosions = explosions.filter((object) => !object.markedForDeletion);
   particles = particles.filter((object) => !object.markedForDeletion);
-
-  gameOver ? drawGameOver() : requestAnimationFrame(animate);
-  // requestAnimationFrame(animate);
+  gameOver ? runGameOverActions() : requestAnimationFrame(animate);
 };
+
 animate(0);
+
+const chooseDifficultyLevel = () => {};
 
 const cursorPointed = document.querySelector('.pointed');
 
