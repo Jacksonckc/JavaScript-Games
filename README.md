@@ -4,7 +4,7 @@ This repo contains all the games developed using Javascript.
 
 The purpose of these apps is to demostrate how to use Javascript canvas to create animated games with graphics and sounds
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://www.loom.com/share/8428a3b46cc14d2fafc5ca4e759e48a3)
 
 # Development Environment
 
